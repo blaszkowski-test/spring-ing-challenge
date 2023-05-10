@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Qualifier("TransactionsImpl")
-public class TransactionImpl implements TransactionService {
+public class TransactionServiceImpl implements TransactionService {
     @Override
     public List<Account> getPrioritizeAccounts(ArrayList<Transaction> transactions) {
         Map<String, Account> accounts = new TreeMap<>();
