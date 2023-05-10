@@ -1,0 +1,13 @@
+[
+    {
+      "region": 9999999,
+      "requestType": "STANDARD",
+      "atmId": -1
+    },
+    {
+      "region": 1,
+      "requestType": "STANDARD",
+      "atmId": 1
+    }
+  ]
+  
