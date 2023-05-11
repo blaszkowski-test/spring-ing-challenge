@@ -1,5 +1,6 @@
 package com.blapiter.transactions;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Account implements Comparable<Account> {
@@ -7,9 +8,9 @@ public class Account implements Comparable<Account> {
     protected String account;
     protected Integer debitCount;
     protected Integer creditCount;
-    protected Double balance;
+    protected BigDecimal balance;
 
-    Account(String account, Integer debitCount, Integer creditCount, Double balance) {
+    Account(String account, Integer debitCount, Integer creditCount, BigDecimal balance) {
       this.account = account;
       this.debitCount = debitCount;
       this.creditCount = creditCount;
@@ -28,7 +29,7 @@ public class Account implements Comparable<Account> {
       return this.creditCount;
     }
 
-    public Double getBalance() {
+    public BigDecimal getBalance() {
       return this.balance;
     }
 
@@ -40,12 +41,12 @@ public class Account implements Comparable<Account> {
       ++this.creditCount;
     }
 
-    public void addBalaceWithAmount(Double amount) {
-      this.balance += amount;
+    public void addBalaceWithAmount(BigDecimal amount) {
+      this.balance = this.balance.add(amount);
     }
 
-    public void substractBalaceWithAmount(Double amount) {
-      this.balance -= amount;
+    public void substractBalaceWithAmount(BigDecimal amount) {
+      this.balance = this.balance.subtract(amount);
     }
 
     @Override

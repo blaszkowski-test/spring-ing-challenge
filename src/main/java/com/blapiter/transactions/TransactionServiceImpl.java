@@ -1,5 +1,6 @@
 package com.blapiter.transactions;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +35,7 @@ public class TransactionServiceImpl implements TransactionService {
         if (!accounts.containsKey(transaction.creditAccount())) {
             accounts.put(
                     transaction.creditAccount(),
-                    new Account(transaction.creditAccount(), 0, 0, 0.0));
+                    new Account(transaction.creditAccount(), 0, 0, new BigDecimal(0)));
         }
     }
 
@@ -42,7 +43,7 @@ public class TransactionServiceImpl implements TransactionService {
         if (!accounts.containsKey(transaction.debitAccount())) {
             accounts.put(
                     transaction.debitAccount(),
-                    new Account(transaction.debitAccount(), 0, 0, 0.0));
+                    new Account(transaction.debitAccount(), 0, 0, new BigDecimal(0)));
         }
     }
 }
