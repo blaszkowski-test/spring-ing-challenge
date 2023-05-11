@@ -19,26 +19,22 @@ public class GameServiceImpl implements GameService {
         Integer currentPlayers = 0;
         List<Clan> toRemove = new LinkedList<Clan>();
         List<ArrayList<Clan>> order = new ArrayList<ArrayList<Clan>>();
-        Collections.sort(players.clans());
         while (!players.clans().isEmpty()) {
+            Collections.sort(players.clans());
             ArrayList<Clan> clans = new ArrayList<Clan>();
             it = players.clans().iterator();
-            while (it.hasNext()) {
+            while (it.hasNext() && currentPlayers < players.groupCount()) {
                 next = it.next();
                 if (next.numberOfPlayers + currentPlayers <= players.groupCount()) {
                     clans.add(next);
                     toRemove.add(next);
                     currentPlayers += next.numberOfPlayers;
                 }
-                if (currentPlayers >= players.groupCount()) {
-                    break;
-                }
             }
             order.add(clans);
             players.clans().removeAll(toRemove);
-            Collections.sort(players.clans());
-            currentPlayers = 0;
             toRemove.clear();
+            currentPlayers = 0;
         }
         return order;
     }
