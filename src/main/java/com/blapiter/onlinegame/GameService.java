@@ -1,8 +1,8 @@
 package com.blapiter.onlinegame;
 
 import java.util.List;
-import java.util.PriorityQueue;
+import java.util.TreeSet;
 
 public interface GameService {
-    public List<PriorityQueue<Clan>> getPrioritizeClans(Players players);
+    public List<TreeSet<Clan>> getPrioritizeClans(Players players);
 }

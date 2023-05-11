@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.PriorityQueue;
+import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -13,16 +13,16 @@ import org.springframework.stereotype.Service;
 @Qualifier("GameServiceImpl")
 public class GameServiceImpl implements GameService {
     @Override
-    public List<PriorityQueue<Clan>> getPrioritizeClans(Players players) {
+    public List<TreeSet<Clan>> getPrioritizeClans(Players players) {
         Clan next = null;
         Integer currentPlayers = 0;
         List<Clan> toRemove = new LinkedList<Clan>();
-        List<PriorityQueue<Clan>> order = new ArrayList<PriorityQueue<Clan>>();
+        List<TreeSet<Clan>> order = new ArrayList<TreeSet<Clan>>();
         while (!players.clans().isEmpty()) {
 
-            PriorityQueue<Clan> clans = new PriorityQueue<Clan>();
+            TreeSet<Clan> clans = new TreeSet<Clan>();
 
-            next = players.clans().poll();
+            next = players.clans().pollFirst();
 
             currentPlayers = next.numberOfPlayers;
             clans.add(next);
