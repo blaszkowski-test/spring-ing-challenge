@@ -41,11 +41,11 @@ public class Account implements Comparable<Account> {
       ++this.creditCount;
     }
 
-    public void addBalaceWithAmount(BigDecimal amount) {
+    public void addAmountToBalance(BigDecimal amount) {
       this.balance = this.balance.add(amount);
     }
 
-    public void substractBalaceWithAmount(BigDecimal amount) {
+    public void subtractAmountFromBalance(BigDecimal amount) {
       this.balance = this.balance.subtract(amount);
     }
 

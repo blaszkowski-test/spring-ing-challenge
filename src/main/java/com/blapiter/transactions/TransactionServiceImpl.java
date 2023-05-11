@@ -22,11 +22,11 @@ public class TransactionServiceImpl implements TransactionService {
 
             currentAccount = accounts.get(transaction.creditAccount());
             currentAccount.incrementCreditCount();
-            currentAccount.addBalaceWithAmount(transaction.amount());
+            currentAccount.addAmountToBalance(transaction.amount());
 
             currentAccount = accounts.get(transaction.debitAccount());
             currentAccount.incrementDebitCount();
-            currentAccount.substractBalaceWithAmount(transaction.amount());
+            currentAccount.subtractAmountFromBalance(transaction.amount());
         }
         return accounts.entrySet().stream().map(item -> item.getValue()).toList();
     }
