@@ -25,6 +25,6 @@ public class AtmController {
 	@PostMapping(value = "/calculateOrder", consumes = "application/json", produces = "application/json")
 	public Order calculate(@RequestBody @Valid ServiceTasks ServiceTasks,
 			BindingResult bindingResult) {
-		return atmService.getPrioritizeJobs(ServiceTasks);
+		return atmService.getPrioritizeOrders(ServiceTasks);
 	}
 }
