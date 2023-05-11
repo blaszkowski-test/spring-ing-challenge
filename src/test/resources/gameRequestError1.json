@@ -1,0 +1,13 @@
+{
+  "groupCount": -1,
+  "clans": [
+    {
+      "numberOfPlayers": 1000000,
+      "points": 50
+    },
+    {
+      "numberOfPlayers": 2,
+      "points": 70
+    }
+  ]
+}

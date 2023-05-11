@@ -87,7 +87,7 @@ public class Task implements Comparable<Task> {
 
     @Override
     public String toString() {
-        return "ServiceTasks [region=" + region + ", atmId=" + atmId + ", requestType=" + requestType.toString() + "]";
+        return "Task [region=" + region + ", atmId=" + atmId + ", requestType=" + requestType.toString() + "]";
     }
 
 }
