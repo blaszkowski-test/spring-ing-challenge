@@ -1,8 +1,8 @@
 package com.blapiter.onlinegame;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public interface GameService {
-    public List<ArrayList<Clan>> getPrioritizeClans(Players players);
+    public List<LinkedList<Clan>> getPrioritizeClans(Players players);
 }

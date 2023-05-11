@@ -1,9 +1,8 @@
 package com.blapiter.onlinegame;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,15 +12,15 @@ import org.springframework.stereotype.Service;
 @Qualifier("GameServiceImpl")
 public class GameServiceImpl implements GameService {
     @Override
-    public List<ArrayList<Clan>> getPrioritizeClans(Players players) {
+    public List<LinkedList<Clan>> getPrioritizeClans(Players players) {
         Clan next = null;
         Iterator<Clan> it = null;
         Integer currentPlayers = 0;
         List<Clan> toRemove = new LinkedList<Clan>();
-        List<ArrayList<Clan>> order = new ArrayList<ArrayList<Clan>>();
+        List<LinkedList<Clan>> order = new LinkedList<LinkedList<Clan>>();
         while (!players.clans().isEmpty()) {
             Collections.sort(players.clans());
-            ArrayList<Clan> clans = new ArrayList<Clan>();
+            LinkedList<Clan> clans = new LinkedList<Clan>();
             it = players.clans().iterator();
             while (it.hasNext() && currentPlayers < players.groupCount()) {
                 next = it.next();

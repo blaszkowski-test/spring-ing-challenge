@@ -1,7 +1,7 @@
 package com.blapiter.onlinegame;
 
 import java.util.List;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -26,7 +26,7 @@ public class GameController {
 
 	@Operation(summary = "Calculate order")
 	@PostMapping(value = "/calculate", consumes = "application/json", produces = "application/json")
-	public List<ArrayList<Clan>> calculate(@RequestBody @Valid Players players,
+	public List<LinkedList<Clan>> calculate(@RequestBody @Valid Players players,
 			BindingResult bindingResult) {
 		return gameService.getPrioritizeClans(players);
 	}

@@ -4,8 +4,6 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
-import java.util.Objects;
-
 public class Clan implements Comparable<Clan> {
 
     @NotNull
@@ -37,26 +35,6 @@ public class Clan implements Comparable<Clan> {
             return -this.points.compareTo(other.points);
         }
         return this.numberOfPlayers.compareTo(other.numberOfPlayers);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.numberOfPlayers, this.points);
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        if (object == null) {
-            return false;
-        }
-
-        if (this.getClass() != object.getClass()) {
-            return false;
-        }
-
-        final Clan other = (Clan) object;
-
-        return this.points.equals(other.points) && this.numberOfPlayers.equals(other.numberOfPlayers);
     }
 
     @Override
