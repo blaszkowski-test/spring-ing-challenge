@@ -2,6 +2,7 @@
 
 - build.sh to create `target/ing-challange-0.0.1-SNAPSHOT.jar`
 - run.sh to run app on port 8080
+- test.sh to run app test
 
 # Endpoints:
 
