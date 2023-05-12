@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Qualifier("GameServiceImpl")
 public class GameServiceImpl implements GameService {
     @Override
-    public List<LinkedList<Clan>> getPrioritizeClans(Players players) {
+    public List<LinkedList<Clan>> getSortedClans(Players players) {
         Clan next = null;
         Iterator<Clan> it = null;
         Integer currentPlayers = 0;

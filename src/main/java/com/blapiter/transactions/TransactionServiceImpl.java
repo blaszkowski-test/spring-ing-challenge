@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Qualifier("TransactionsImpl")
 public class TransactionServiceImpl implements TransactionService {
     @Override
-    public List<Account> getPrioritizeAccounts(ArrayList<Transaction> transactions) {
+    public List<Account> getSortedAccounts(ArrayList<Transaction> transactions) {
         Map<String, Account> accounts = new TreeMap<>();
         Account currentAccount = null;
         for (Transaction transaction : transactions) {

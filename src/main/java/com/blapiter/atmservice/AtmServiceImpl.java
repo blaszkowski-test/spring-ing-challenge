@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Qualifier("AtmServiceImpl")
 public class AtmServiceImpl implements AtmService {
     @Override
-    public Order getPrioritizeOrders(ServiceTasks collection) {
+    public Order getSortedOrders(ServiceTasks collection) {
         return collection
                 .stream()
                 .sorted()

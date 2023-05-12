@@ -28,6 +28,6 @@ public class GameController {
 	@PostMapping(value = "/calculate", consumes = "application/json", produces = "application/json")
 	public List<LinkedList<Clan>> calculate(@RequestBody @Valid Players players,
 			BindingResult bindingResult) {
-		return gameService.getPrioritizeClans(players);
+		return gameService.getSortedClans(players);
 	}
 }

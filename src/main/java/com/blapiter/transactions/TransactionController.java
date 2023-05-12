@@ -28,6 +28,6 @@ public class TransactionController {
 	@PostMapping(value = "/report", consumes = "application/json", produces = "application/json")
 	public List<Account> report(@RequestBody ArrayList<@Valid Transaction> transactios,
 			BindingResult bindingResult) {
-		return transactionService.getPrioritizeAccounts(transactios);
+		return transactionService.getSortedAccounts(transactios);
 	}
 }
