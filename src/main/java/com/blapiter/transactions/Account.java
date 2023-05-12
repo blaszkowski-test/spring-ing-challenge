@@ -11,72 +11,79 @@ public class Account implements Comparable<Account> {
     protected BigDecimal balance;
 
     Account(String account, Integer debitCount, Integer creditCount, BigDecimal balance) {
-      this.account = account;
-      this.debitCount = debitCount;
-      this.creditCount = creditCount;
-      this.balance = balance;
+        this.account = account;
+        this.debitCount = debitCount;
+        this.creditCount = creditCount;
+        this.balance = balance;
+    }
+
+    Account(String account) {
+        this.account = account;
+        this.debitCount = 0;
+        this.creditCount = 0;
+        this.balance = new BigDecimal(0);
     }
 
     public String getAccount() {
-      return this.account;
+        return this.account;
     }
 
     public Integer getDebitCount() {
-      return this.debitCount;
+        return this.debitCount;
     }
 
     public Integer getCreditCount() {
-      return this.creditCount;
+        return this.creditCount;
     }
 
     public BigDecimal getBalance() {
-      return this.balance;
+        return this.balance;
     }
 
     public void incrementDebitCount() {
-      ++this.debitCount;
+        ++this.debitCount;
     }
 
     public void incrementCreditCount() {
-      ++this.creditCount;
+        ++this.creditCount;
     }
 
     public void addAmountToBalance(BigDecimal amount) {
-      this.balance = this.balance.add(amount);
+        this.balance = this.balance.add(amount);
     }
 
     public void subtractAmountFromBalance(BigDecimal amount) {
-      this.balance = this.balance.subtract(amount);
+        this.balance = this.balance.subtract(amount);
     }
 
     @Override
     public int compareTo(Account other) {
-      return this.account.compareTo(other.account);
+        return this.account.compareTo(other.account);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(this.account);
+        return Objects.hash(this.account);
     }
 
     @Override
     public boolean equals(Object object) {
-      if (object == null) {
-        return false;
-      }
+        if (object == null) {
+            return false;
+        }
 
-      if (this.getClass() != object.getClass()) {
-        return false;
-      }
+        if (this.getClass() != object.getClass()) {
+            return false;
+        }
 
-      final Account other = (Account) object;
+        final Account other = (Account) object;
 
-      return this.account.equals(other.account);
+        return this.account.equals(other.account);
     }
 
     @Override
     public String toString() {
-      return "Account [account=" + account + ", debitCount=" + debitCount + ",creditCount=" + creditCount + ",balance="
-          + balance + "]";
+        return "Account [account=" + account + ", debitCount=" + debitCount + ", creditCount=" + creditCount
+                + ", balance=" + balance + "]";
     }
-  }
+}
