@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class TransactionServiceImpl implements TransactionService {
     @Override
     public List<Account> getSortedAccounts(ArrayList<Transaction> transactions) {
-        Map<String, Account> accounts = new HashMap<>();
+        Map<String, Account> accounts = new HashMap<>(transactions.size());
         for (Transaction transaction : transactions) {
             this.addAccount(accounts, transaction.creditAccount());
             this.addAccount(accounts, transaction.debitAccount());
